@@ -1,0 +1,140 @@
+<!----------------------------------------
+-----------------HTML------------------
+--------------------------------------->
+
+<div class="wrapper">
+    <header>Modification de tâche</header>
+    <form novalidate class="inputField" action="#/list">
+        <div class="tache">
+            <label for="tache">Tâche</label>
+            <input
+                type="text"
+                id="tache"
+                name="tache"
+                ng-model="tache.tache"
+                placeholder="Entrer la tâche"
+                ng-required="true"
+            />
+        </div>
+
+        <div class="description">
+            <label for="description">Description</label>
+            <input
+                type="text"
+                id="description"
+                name="description"
+                ng-model="tache.description"
+                placeholder="Entrer la description"
+                ng-required="true"
+            />
+        </div>
+
+        <div class="categorie">
+            <label for="categorie">Catégorie </label>
+            <input
+                type="text"
+                id="categorie"
+                name="categorie"
+                ng-model="tache.categorie"
+                placeholder="Entrer la catégorie"
+                ng-required="true"
+            />
+        </div>
+
+        <div class="dateDebut">
+            <label for="dateDebut">Date Début</label>
+            <input
+                type="text"
+                id="dateDebut"
+                name="dateDebut"
+                ng-model="tache.dateDebut"
+                placeholder="Entrer date debut"
+                ng-required="true"
+            />
+        </div>
+
+        <div class="duree">
+            <label for="duree">Durée (jours)</label>
+            <input
+                type="text"
+                id="duree"
+                name="duree"
+                ng-model="tache.duree"
+                placeholder="Entrer durée"
+                ng-required="true"
+            />
+        </div>
+
+        <input type="button" ng-click="editTask()" value="Modifier" />
+    </form>
+</div>
+
+<!---------------------------------------
+------------------CSS------------------
+--------------------------------------->
+
+<style>
+    @font-face {
+        font-family: "Roboto";
+        src: url("../fonts/Roboto-Regular.ttf");
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+    }
+
+    header {
+        margin: -36px 0 0 10px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .wrapper {
+        margin: 60px auto;
+        max-width: 400px;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 25px;
+    }
+
+    .wrapper .inputField {
+        height: 305px;
+        width: 100%;
+        margin: 20px 0;
+        vertical-align: middle;
+    }
+
+    .inputField label {
+        padding-right: 10px;
+    }
+
+    .inputField input {
+        width: 85%;
+        height: 100%;
+        font-size: 17px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .inputField input[type="button"] {
+        background: rgb(89, 46, 168);
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 6px 10px;
+        border: none;
+        width: 100%;
+        height: fit-content;
+    }
+</style>

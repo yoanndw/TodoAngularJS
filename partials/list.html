@@ -1,0 +1,101 @@
+<!----------------------------------------
+-----------------HTML------------------
+--------------------------------------->
+
+<div class="wrapper">
+    <header>Liste des taches</header>
+    <ul class="todoList" ng-repeat="(index, tache) in taches">
+        <li>
+            {{tache.tache}}
+            <i ng-click="editTache(index)" class="small material-icons right"
+                >edit</i
+            >
+            <span>
+                <i ng-click="deleteTache(index)" class="fas fa-trash"></i>
+            </span>
+        </li>
+    </ul>
+    <footer class="footer">
+        <span>Vous avez {{taches.length}} tâches</span>
+    </footer>
+</div>
+
+<!---------------------------------------
+------------------CSS------------------
+--------------------------------------->
+
+<style>
+    @font-face {
+        font-family: "Roboto";
+        src: url("../fonts/Roboto-Regular.ttf");
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+    }
+
+    header {
+        margin: 10px 0 20px 10px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .wrapper {
+        margin: 60px auto;
+        max-width: 400px;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 25px;
+    }
+
+    .todoList li {
+        position: relative;
+        list-style: none;
+        height: 45px;
+        line-height: 45px;
+        background: lightgray;
+        border-right: none;
+        border-radius: 5px;
+        margin-bottom: 8px;
+        padding-left: 15px;
+        cursor: default;
+    }
+
+    .todoList li span {
+        position: absolute;
+        right: 0;
+        color: white;
+        background: red;
+        width: 45px;
+        cursor: pointer;
+        border-radius: 0 3px 3px 0;
+        text-align: center;
+    }
+
+    .footer {
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer button {
+        background: rgb(89, 46, 168);
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 6px 10px;
+        border: none;
+    }
+</style>
